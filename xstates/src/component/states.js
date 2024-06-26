@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./states.css";
 const States = () => {
   const [statedis, setStatedis] = useState(true);
   const [citydis, setCitdis] = useState(true);
@@ -91,9 +92,9 @@ const States = () => {
         </select>
       </div>
       {final.country && final.state && final.city ? (
-        <h1>
+        <h4>
           You Selected {final.city},{final.state},{final.country}
-        </h1>
+        </h4>
       ) : (
         ""
       )}
