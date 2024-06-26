@@ -37,7 +37,7 @@ const States = () => {
 
         setStates(data);
       } catch (err) {
-        console.log(err);
+        return err;
       }
     };
     res();
@@ -52,7 +52,7 @@ const States = () => {
         console.log(data, "this is state data");
         setCitites(data);
       } catch (err) {
-        console.log(err);
+        return err;
       }
     };
     res();
@@ -61,13 +61,12 @@ const States = () => {
   const onchange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
-
-    setFinal({ ...final, [name]: value });
     if (name === "country") {
       setStatedis(false);
     } else if (name === "state") {
       setCitdis(false);
     }
+    setFinal({ ...final, [name]: value });
   };
   console.log(final);
   console.log(statedis, "value of this one");
