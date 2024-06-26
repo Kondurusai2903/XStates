@@ -37,7 +37,7 @@ const States = () => {
 
         setStates(data);
       } catch (err) {
-        return err;
+        console.log(err);
       }
     };
     res();
@@ -52,7 +52,7 @@ const States = () => {
         console.log(data, "this is state data");
         setCitites(data);
       } catch (err) {
-        return err;
+        console.log(err);
       }
     };
     res();
@@ -75,16 +75,25 @@ const States = () => {
       <h1>Select Location</h1>
       <div>
         <select name="country" onChange={onchange}>
+          <option value="select country" disabled>
+            Select Country
+          </option>
           {country.map((val) => (
             <option value={val}>{val}</option>
           ))}
         </select>
         <select name="state" disabled={statedis} onChange={onchange}>
+          <option value="select State" disabled>
+            Select State
+          </option>
           {states.map((val) => (
             <option value={val}>{val}</option>
           ))}
         </select>
         <select name="city" disabled={citydis} onChange={onchange}>
+          <option value="select City" disabled>
+            Select City
+          </option>
           {citites.map((val) => (
             <option value={val}>{val}</option>
           ))}
@@ -92,7 +101,8 @@ const States = () => {
       </div>
       {final.country && final.state && final.city ? (
         <h4>
-          You Selected {final.city},{final.state},{final.country}
+          You Selected {final.city}, {final.state}, {final.country}
+          {/* You selected Panaji, Goa, India */}
         </h4>
       ) : (
         ""
