@@ -101,7 +101,8 @@ const States = () => {
       </div>
       {final.country && final.state && final.city ? (
         <h4>
-          You Selected {final.city}, {final.state}, {final.country}
+          You selected {final.city}, {final.state}, {final.country}
+          {/* You selected Panaji, Goa, India' */}
           {/* You selected Panaji, Goa, India */}
         </h4>
       ) : (
